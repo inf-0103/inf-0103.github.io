@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <SDL2/SDL.h>
+#include <SDL3/SDL.h>
 #include "drawline.h"
 #include "triangle.h"
 #include "teapot_data.h"

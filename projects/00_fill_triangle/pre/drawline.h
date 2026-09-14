@@ -1,7 +1,7 @@
 #ifndef DRAWLINE_H_
 #define DRAWLINE_H_
 
-#include <SDL2/SDL.h>
+#include <SDL3/SDL.h>
 
 /*
  * Draw a line on the surface from point (x1, y1) to point (x2, y2) using color
