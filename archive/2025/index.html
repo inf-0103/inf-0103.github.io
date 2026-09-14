@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>INF-0103, H25</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">INF-0103, H25</h1>
+</header>
+<h1
+id="inf-0103-datamaskiners-virkemåte-og-programmering-høst-2025.">INF-0103
+Datamaskiners virkemåte og programmering, høst 2025.</h1>
+<p>Innleveringer og kunngjøringer skjer i Canvas. Se også Canvas for
+invitasjonslenke til Discord.</p>
+<h2 id="innhold">Innhold</h2>
+<p>Her er nyttige lenker for å hoppe rett til en av overskriftene
+nedenfor</p>
+<ul>
+<li><a href="#pensum">Pensumlitteratur</a></li>
+<li><a href="#stab">Kursets stab</a></li>
+<li><a href="#plan">Forelesningsplan</a></li>
+<li><a href="#eksamen">Eksamen</a></li>
+<li><a href="#oblig">Obligatoriske oppgaver</a></li>
+<li><a href="#oppgaver">Hvor finner man programmerings
+oppgaver?</a></li>
+<li><a href="#forelesningsnotater">Forelesningsnotater</a></li>
+<li><a href="#temaoversikt">Temaoversikt</a></li>
+</ul>
+<h2 id="pensum">Pensumlitteratur</h2>
+<h3 id="pensum-1">Pensum</h3>
+<ul>
+<li>Patt &amp; Patel – Introduction to Computing Systems (kalles P&amp;P
+i temaoversikt). Fås i universitetsbokhandelen. Det finner
+løsningsforslag til utvalgte oppgaver <a
+href="https://highered.mheducation.com/sites/1260150534/student_view0/student_solutions_manual.html">på
+denne siden</a>. Merk at LC3 ikke er en del av pensum i dette
+kurset.</li>
+</ul>
+<h3 id="støttelitteratur">Støttelitteratur</h3>
+<ul>
+<li>Kernighan &amp; Ritchie – The C Programming language (K&amp;R i
+temaoversikt). <a
+href="https://archive.org/details/c-programming-language-2nd-edition/mode/2up">Finnes
+tilgjengelig online her</a>.</li>
+<li><a href="https://beej.us/guide/bgc/html/split/index.html">Beej’s
+Guide to C Programming</a></li>
+<li><a href="https://c-faq.com/">c-faq</a>: ofte-stilte spørsmål om
+C</li>
+<li><a href="https://en.cppreference.com/w/c.html">C reference</a>:
+Teknisk dokumentasjon for C.</li>
+</ul>
+<p><a href="#innhold">Tilbake til innhold</a></p>
+<h2 id="stab">Kursets stab</h2>
+<h3 id="forelesere">Forelesere</h3>
+<ul>
+<li>AB: Anne Bosch (foreleser)</li>
+<li>RB: Rune Bostad (ansvarilg på Mo)</li>
+<li>EH: Einar Holsbø (kursansvarlig)</li>
+<li>EP: Edvard Pedersen (foreleser)</li>
+<li>JP: Jakob Pettersen (foreleser)</li>
+</ul>
+<h3 id="hjelpelærere">Hjelpelærere</h3>
+<ul>
+<li>Thomas L. Nygård (Mo)</li>
+<li>Thomas Tekie</li>
+<li>Simon Gilbu</li>
+<li>Håkon Johansen</li>
+<li>Ghafoor Ahsan</li>
+<li>Christoffer V. Larsen</li>
+<li>Tommy Nguyen</li>
+</ul>
+<p><a href="#innhold">Tilbake til innhold</a></p>
+<h2 id="plan">Forelesningsplan</h2>
+<p>Merk: på de dager hvor det ikke står noe er det ikke forelesning.
+Dette er uansett om du har noe i timeplanen din som sier at det skal
+være forelesning.</p>
+<p>Enkelte dager har vi forelesning + BBI-foredrag eller bare
+BBI-foredrag. Oversikt over BBI tema finner du <a
+href="https://uit.no/project/bbi2/cultural">her</a>.</p>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 46%" />
+<col style="width: 29%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr>
+<th>Dato</th>
+<th>Tema</th>
+<th>Notater</th>
+<th>Foreleser</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tirsdag 23/09</strong></td>
+<td>Kompilering og headers</td>
+<td></td>
+<td>JP+EH</td>
+</tr>
+<tr>
+<td>Fredag 26/09</td>
+<td>BBI-foredrag</td>
+<td></td>
+<td>BBI</td>
+</tr>
+<tr>
+<td><strong>Tirsdag 30/09</strong></td>
+<td>Minne I: Pekere, tabeller, generell oversikt</td>
+<td></td>
+<td>JP</td>
+</tr>
+<tr>
+<td>Fredag 03/10</td>
+<td>2’s complement og flyttallsrepresentasjoner</td>
+<td></td>
+<td>AB</td>
+</tr>
+<tr>
+<td><strong>Tirsdag 07/10</strong></td>
+<td>Sammensatte datatyper (structs) + BBI foredrag</td>
+<td></td>
+<td>BBI+EP</td>
+</tr>
+<tr>
+<td>Fredag 10/10</td>
+<td>Minne II: Dynamisk minnehåndtering</td>
+<td>obligatorisk oppgave deles ut</td>
+<td>EP</td>
+</tr>
+<tr>
+<td><strong>Tirsdag 14/10</strong></td>
+<td>Minne III: Stack, call stack, heap</td>
+<td></td>
+<td>EH</td>
+</tr>
+<tr>
+<td>Fredag 17/10</td>
+<td>Minne: Pekere (repetisjon)</td>
+<td></td>
+<td>SG</td>
+</tr>
+<tr>
+<td><strong>Tirsdag 21/10</strong></td>
+<td>Lenket liste + BBI-foredrag</td>
+<td></td>
+<td>BBI + EH</td>
+</tr>
+<tr>
+<td>Fredag 24/10</td>
+<td>SDL/Event loop</td>
+<td></td>
+<td>EP</td>
+</tr>
+<tr>
+<td><strong>Tirsdag 28/10</strong></td>
+<td>Rekursjon + BBI-foredrag</td>
+<td></td>
+<td>BBI + EH</td>
+</tr>
+<tr>
+<td>Fredag 31/10</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Tirsdag 04/11</strong></td>
+<td>Input/Output med filer</td>
+<td></td>
+<td>EP</td>
+</tr>
+<tr>
+<td>Fredag 07/11</td>
+<td></td>
+<td>obligatorisk oppgave skal leveres</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Tirsdag 11/11</strong></td>
+<td>Von Neumann-modellen +BBI-foredrag</td>
+<td></td>
+<td>BBI + AB</td>
+</tr>
+<tr>
+<td>Fredag 14/11</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Tirsdag 18/11</strong></td>
+<td>Ringbuffer + Evaluering</td>
+<td></td>
+<td>EP + EH</td>
+</tr>
+<tr>
+<td>Fredag 21/11</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Tirsdag 25/11</strong></td>
+<td>Repetisjon/eksamenstips + BBI-foredrag</td>
+<td></td>
+<td>BBI + EH</td>
+</tr>
+<tr>
+<td>Fredag 28/11</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><tag style="color: red;"> <strong>Torsdag 11/12</strong> </tag></td>
+<td><tag style="color: red;"> <strong>EKSAMEN</strong> </tag></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a href="#innhold">Tilbake til innhold</a></p>
+<h2 id="eksamen">Eksamen</h2>
+<p>Eksamen er en 3 timers skriftlig skoleeksamen. I praksis betyr dette
+at du møter opp på et eksamenslokale og løser eksamen der. Dette kurset
+er nytt og har ikke tidligere eksamener men eksamen vil ligne en kortere
+variant av skriftlig eksamen fra gamle INF-1100. For å øve til eksamen
+kan det være en god idé å gå gjennom gamle eksamensett derfra. Du kan
+finne dem i <a
+href="https://github.com/uit-inf0103-25/uit-inf0103-25.github.io">kursets
+repo</a> under <code>exams_1100/</code>.</p>
+<p><a href="#innhold">Tilbake til innhold</a></p>
+<h2 id="oblig">Obligatoriske oppgaver</h2>
+<p>For å få gå opp til eksamen må du ha bestått en av kursets
+obligatoriske oppgaver (også kalt arbeidskrav). Disse leveres i Canvas,
+og oppgavene finnes i Canvas under Filer. Denne ene, bouncing balls, er
+markert <em>(ikke LLM)</em> og skal ikke brukes kunstig intelligens type
+verktøy på (chatgpt, copilot, osv.). Med andre ord ligger den på Nivå 1
+etter <a href="https://uit.no/vurdering#innhold_887886">UiTs
+retningslinjer</a>. Den andre er for folk som er spesielt interesserte i
+å bruke en KI (eller som ønsker en ekstra utfordring) og ligger på Nivå
+4. Hvis du ønsker å gjøre denne oppgaven skal du avtale det med Edvard
+på forhånd.</p>
+<p>I utgangspunktet har du to forsøk på arbeidskravet: ett hovedforsøk
+og en mulighet til å rette opp mangler etter tilbakemelding fra
+hjelpelærer. Hvis du ikke leverer til fristen telles det som at du har
+brukt et forsøk.</p>
+<p>Merk at også disse oppgavene faller under <a
+href="https://lovdata.no/dokument/SF/forskrift/2020-06-26-1617/KAPITTEL_7#%C2%A746">eksamensreglementet</a>.</p>
+<p><a href="#innhold">Tilbake til innhold</a></p>
+<h2 id="oppgaver">Hvor finner man programmeringsoppgaver?</h2>
+<p>Eller kanskje snarere: hvordan lærer man å programmere? Man lærer å
+programmere ved å skrive programmer som løser forskjellige problemer.
+Læreboka P&amp;P er en kilde til oppgaver, i temaoversikt nedenfor
+lister vi noen oppgaver relevante til hvert kapittel, men se gjerne på
+resten av dem også. Utover dette er det mange gode resurser online. For
+eksempel:</p>
+<ul>
+<li><a href="https://projecteuler.net/">Project Euler</a> har
+matematiske småproblemer som skal løses gjennom programmering.</li>
+<li><a href="https://cryptopals.com/">CryptoPals</a> har oppgaver som
+dreier seg om å knekke kryptotekst.</li>
+<li><a href="https://codegolf.stackexchange.com/">Code golf stack
+exchange</a> har alle slags små oppgaver. Poenget for de som deltar
+aktivt er å skrive så korte programmer som mulig (derav “golf”); vi
+anbefaler å ignorere denne delen av code golfing da det ikke oppmuntrer
+til spesielt god/lesbar kode.</li>
+<li><a href="https://adventofcode.com/">Advent of Code</a> er en
+programmeringsaktivitet som går 1-25 desember hvert år: hver dag kommer
+det en ny programmeringsoppgave i stigende vanskelighetsgrad. Man kan se
+alle oppgaver fra tidligere år.</li>
+</ul>
+<p>I tillegg finnes det mange alternativer på YouTube, som f.eks. fra <a
+href="https://www.youtube.com/watch?v=KJgsSFOSQv0">freeCodeCamp</a>.</p>
+<p><a href="#innhold">Tilbake til innhold</a></p>
+<h2 id="forelesningsnotater">Forelesningsnotater</h2>
+<p>Forelesningsnotater legges under <code>lectures/</code> i <a
+href="https://github.com/uit-inf0103-25/uit-inf0103-25.github.io">dette
+github-repoet</a>.</p>
+<p><a href="#innhold">Tilbake til innhold</a></p>
+<h2 id="temaoversikt">Temaoversikt</h2>
+<p>Nedenfor er kurset i et nøtteskall med hint om relevant pensum og
+forslag til oppgaver. Merk at forelesningsnotatene ofte inneholder
+oppgaver også. For forelesningsnotater se <a
+href="#forelesningsnotater">forelesningsnotater</a> over.</p>
+<h3 id="kompilering-og-headers">Kompilering og headers</h3>
+<p>C kode oversettes til et kjørbart program via en prosess som kalles
+kompilering; et C prosjekt organiseres typisk med headerfiler.</p>
+<ul>
+<li>Relevant pensum: P&amp;P kap. 11 og K&amp;R kap. 4</li>
+<li>Anbefalte oppgaver: P&amp;P 11.9, 11.12 og K&amp;R 4-2, 4-3, 4-5,
+4-14</li>
+</ul>
+<p>Se også for eksempel <a
+href="https://phoxis.org/2009/12/01/beginners-guide-to-gcc/">denne
+introduksjonen til GCC</a> for mer detaljer om det å kompilere et C
+program.</p>
+<h3 id="minne-i-pekere-tabeller-generell-oversikt">Minne I: Pekere,
+tabeller, generell oversikt</h3>
+<p>Alle variabler ligger et sted i datamaskinens minne. En peker er en
+egen datatype i C som peker (herav navnet) til en minneadresse, altså en
+plass i minnet. En tabell (<strong>array</strong>) er en samling med
+verdier som ligger etter hverandre i minnet.</p>
+<ul>
+<li>Relevant pensum: P&amp;P kapittel 16, K&amp;R kapittel 5.</li>
+<li>Anbefalte oppgaver: P&amp;P 16.1, 16.2, 16.3, 16.9</li>
+</ul>
+<h3 id="s-complement-og-flyttallsrepresentasjoner">2’s complement og
+flyttallsrepresentasjoner</h3>
+<p>Negative heltall representeres i <em>two’s complement</em>, som er
+heltall modulo <span class="math inline">2<sup><em>n</em></sup></span>.
+Flyttall representeres som et fortegn (+/-), en signifikant/mantissa og
+en eksponent, lignende med vitenskapelig notasjon.</p>
+<ul>
+<li>Relevant pensum: P&amp;P kapittel 2.2, 2.3, 2.5, 2.7</li>
+<li>Anbefalte oppgaver: P&amp;P 2.4, 2.5, .26, 2.7, 2.10, 2.13, 2.17,
+2.22, 2.24, 2.40, 2.41</li>
+</ul>
+<h3 id="sammensatte-datatyper-structs">Sammensatte datatyper
+(structs)</h3>
+<p>En <code>struct</code> er en datatype i C som er satt sammen av flere
+datatyper; for eksempel er <code>struct { int x; int y; }</code> satt
+sammen av to <code>int</code>.</p>
+<ul>
+<li>Relevant pensum: P&amp;P kapittel 19.1, 19.2, 19.3; K&amp;R kapittel
+6.1, 6.2, 6.3, 6.4</li>
+<li>Anbefalte oppgaver: P&amp;P 19.1, 19.3</li>
+</ul>
+<h3 id="minne-ii-dynamisk-minnehåndtering">Minne II: Dynamisk
+minnehåndtering</h3>
+<p>I mange tilfeller vet vi ikke hvor mye minne vi trenger mens vi
+skriver programmet, f.eks. hvis dette avhenger av noe brukeren gjør. Vi
+kan dynamisk allokere og deallokere minne ved bruk av en håndfull
+funksjoner, f.eks. <code>malloc()</code> og <code>free()</code>.</p>
+<ul>
+<li>Relevant pensum: P&amp;P kapittel 19.4</li>
+</ul>
+<h3 id="minne-iii-stack-call-stack-heap">Minne III: Stack, call stack,
+heap</h3>
+<p>Dynamisk allokert minne legges i en del av minnet som kalles
+<strong>heap</strong>. Alt minne som hører til et funksjonskall havner i
+et område som kalles <strong>stacken</strong> eller the call stack på
+engelsk. Denne fungerer som en stack datastruktur: det fsiste som ble
+lagt inn er det første som fjernes.</p>
+<ul>
+<li>Relevant pensum: P&amp;P kapittel 8.2, 12.5, 14.3, 19.4</li>
+<li>Anbefalte oppgaver: P&amp;P 8.1, 8.2, 8.4, 8.8, 14.2, 14.7,
+14.8</li>
+</ul>
+<h3 id="lenket-liste">Lenket liste</h3>
+<p>En lenket liste er en dynamisk datastruktur som kan holde vilkårlig
+mange ting i rekkefølge. Dette gjøres ved at det lagres noe data (det
+man vil ha i lista) og en peker til neste “node” (data + peker) i
+listen.</p>
+<ul>
+<li>Relevant pensum: P&amp;P kapittel 19.5; K&amp;R kapittel 6.5</li>
+<li>Anbefalte oppgaver: lag en lenket liste; putt tilfeldige tall inn i
+den</li>
+</ul>
+<h3 id="sdlevent-loop">SDL/Event loop</h3>
+<p>I forbindelse med den obligatoriske oppgaven bruker vi et bibliotek
+som heter SDL. Man bruker det bl.a. til å tegne på datamaskinens skjerm.
+En event loop er en løkke som kjører igjen og igjen og oppdaterer skjerm
+og annen tilstand forbundet med programmets kjøring.</p>
+<h3 id="rekursjon">Rekursjon</h3>
+<p>Rekursjon er en programmeringsteknik hvor en funksjon kaller seg
+selv. Et lekeeksempel er “n fakultet”-funksjonen vi kjenner fra
+matematikk som kan defineres relativt til seg selv:</p>
+<p><span
+class="math display"><em>n</em>! = <em>n</em> ⋅ (<em>n</em> − 1) ⋅ … ⋅ 2 ⋅ 1 = <em>n</em> ⋅ (<em>n</em> − 1)!</span></p>
+<p>eller i C kode</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> factorial<span class="op">(</span><span class="dt">int</span> n<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>n <span class="op">==</span> <span class="dv">1</span><span class="op">)</span> <span class="cf">return</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span> <span class="cf">return</span> n<span class="op">*</span>factorial<span class="op">(</span>n<span class="op">-</span><span class="dv">1</span><span class="op">);</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ul>
+<li>Relevant pensum: P&amp;P kapittel 17</li>
+<li>Anbefalte oppgaver: 17.1, 17.2, 17.3, 17.4, 17.5, 17.8, 17.10,
+17.11, 17.12</li>
+</ul>
+<h3 id="inputoutput-med-filer">Input/Output med filer</h3>
+<p>Et program er mest interessant når det tar inn data (input til
+programmet) og gir ut data (output fra programmet). Filer er en veldig
+vanlig mate å gi input/få output.</p>
+<ul>
+<li>Relevant pensum: P&amp;P kapittel 18</li>
+<li>Anbefalte oppgaver: 18.3, 18.8, 18.9</li>
+</ul>
+<h3 id="von-neumann-modellen">Von Neumann-modellen</h3>
+<p>På midten av 1900-tallet foreslo Von Neumann en model for hvordan
+komponentene i en datamaskin kan organiseres og samhandle. Denne
+modellen er i stor grad relevant også i dag.</p>
+<ul>
+<li>Relevant pensum: P&amp;P kapittel 4</li>
+<li>Anbefalte oppgaver: 4.1, 4.2, 4.3, 4.6, 4.7, 4.9, 4.11, 4.16</li>
+</ul>
+<p><strong>Lenker fra forelesning:</strong></p>
+<ul>
+<li>Simulator: <a
+href="https://tools.withcode.uk/cpu/?ram=00000000000000000000000000000000">lenke</a><br />
+</li>
+<li>Simulator preloadet med et annet program <a
+href="https://tools.withcode.uk/cpu/?ram=05030001517c5210325123317e645200">lenke</a>.
+NB! Programtelleren må initialiseres med verdien 00000100 før start
+fordi programmet starter ikke på minneplassering 0. Klarer du å finne ut
+hva det gjør?</li>
+</ul>
+<p>Tre nyttige videoer:</p>
+<ul>
+<li>Harvard vs. von Neumann-arkitektur: <a
+href="https://www.youtube.com/watch?v=4nY7mNHLrLk">lenke</a></li>
+<li>Computerphile om von Neumann: <a
+href="https://www.youtube.com/watch?v=Ml3-kVYLNr8">lenke</a></li>
+<li>Instruksjonssyklusen: <a
+href="https://www.youtube.com/watch?v=Z5JC9Ve1sfI">lenke</a></li>
+</ul>
+<p><a href="#innhold">Tilbake til innhold</a></p>
+</body>
+</html>
