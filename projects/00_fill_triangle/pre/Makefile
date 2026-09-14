@@ -2,7 +2,17 @@ EXECUTABLE = app
 CC = gcc
 
 CFLAGS = -D_REENTRANT -DSDL_MAIN_HANDLED
-LIBS  = -lm -lSDL2
+#
+# fix for secret homebrew libs
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Darwin)
+	SDL3_PATH = $(shell brew --prefix sdl3 2>/dev/null)
+	CFLAGS = -D_REENTRANT -DSDL_MAIN_HANDLED -std=c23 \
+	    -I$(SDL3_PATH)/include \
+	    -L$(SDL3_PATH)/lib
+endif
+
+LIBS  = -lm -lSDL3
 
 SOURCE = drawline.c main.c triangle.c
 HEADER = drawline.h triangle.h teapot_data.h
