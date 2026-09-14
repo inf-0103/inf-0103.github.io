@@ -64,17 +64,15 @@ int main(void)
     SDL_Event event;
     
     /* Initialize SDL */
-    if (SDL_Init(SDL_INIT_VIDEO) < -1) {
+    if (!SDL_Init(SDL_INIT_VIDEO)) {
         snprintf(errmsg, bufsize, "Unable to initialize SDL.");
         goto error;
     }
     
     /* Create a 1600x900 window */
     window = SDL_CreateWindow("The Amazing Teapot",
-                              SDL_WINDOWPOS_UNDEFINED,
-                              SDL_WINDOWPOS_UNDEFINED,
-                              screen_w, screen_h,
-                              0);
+                               screen_w, screen_h,
+                               0);
     if(!window) {
         snprintf(errmsg, bufsize, "Unable to get video surface.");
         goto error;
@@ -119,12 +117,11 @@ int main(void)
         
         while (SDL_PollEvent(&event)) {
             switch(event.type) {
-                case SDL_QUIT:
+                case SDL_EVENT_QUIT:
                     done = 1;
                     break;
-                case SDL_WINDOWEVENT:
-                    if (event.window.event == SDL_WINDOWEVENT_SHOWN)
-                        SDL_SetWindowPosition(window, 50, 50);
+                case SDL_EVENT_WINDOW_SHOWN:
+                    SDL_SetWindowPosition(window, 50, 50);
                     break;
             }          
         }
