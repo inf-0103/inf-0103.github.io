@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
+  <meta name="generator" content="pandoc 3.10.1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>INF-0103, H25</title>
+  <title>INF-0103</title>
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     html {
       color: #1a1a1a;
       background-color: #fdfdfd;
@@ -38,7 +41,6 @@
       body {
         background-color: transparent;
         color: black;
-        font-size: 12pt;
       }
       p, h2, h3 {
         orphans: 3;
@@ -88,6 +90,7 @@
       color: #606060;
     }
     code {
+      white-space: pre-wrap;
       font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
       font-size: 85%;
       margin: 0;
@@ -151,10 +154,13 @@
     #TOC a:not(:hover) {
       text-decoration: none;
     }
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -235,20 +241,20 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">INF-0103, H25</h1>
+<h1 class="title">INF-0103</h1>
 </header>
 <h1
-id="inf-0103-datamaskiners-virkemåte-og-programmering-høst-2025.">INF-0103
-Datamaskiners virkemåte og programmering, høst 2025.</h1>
-<p>Innleveringer og kunngjøringer skjer i Canvas. Se også Canvas for
-invitasjonslenke til Discord.</p>
+id="inf-0103-datamaskiners-virkemåte-og-programmering-høst-2026.">INF-0103
+Datamaskiners virkemåte og programmering, høst 2026.</h1>
+<p>Kunngjøringer skjer i Canvas. Se også Canvas for invitasjonslenke til
+Discord.</p>
 <h2 id="innhold">Innhold</h2>
 <p>Her er nyttige lenker for å hoppe rett til en av overskriftene
 nedenfor</p>
 <ul>
 <li><a href="#pensum">Pensumlitteratur</a></li>
 <li><a href="#stab">Kursets stab</a></li>
-<li><a href="#plan">Forelesningsplan</a></li>
+<li><a href="#plan">Framdriftsplan</a></li>
 <li><a href="#eksamen">Eksamen</a></li>
 <li><a href="#oblig">Obligatoriske oppgaver</a></li>
 <li><a href="#oppgaver">Hvor finner man programmerings
@@ -257,196 +263,156 @@ oppgaver?</a></li>
 <li><a href="#temaoversikt">Temaoversikt</a></li>
 </ul>
 <h2 id="pensum">Pensumlitteratur</h2>
-<h3 id="pensum-1">Pensum</h3>
-<ul>
-<li>Patt &amp; Patel – Introduction to Computing Systems (kalles P&amp;P
-i temaoversikt). Fås i universitetsbokhandelen. Det finner
-løsningsforslag til utvalgte oppgaver <a
-href="https://highered.mheducation.com/sites/1260150534/student_view0/student_solutions_manual.html">på
-denne siden</a>. Merk at LC3 ikke er en del av pensum i dette
-kurset.</li>
-</ul>
-<h3 id="støttelitteratur">Støttelitteratur</h3>
-<ul>
-<li>Kernighan &amp; Ritchie – The C Programming language (K&amp;R i
-temaoversikt). <a
+<p>INF-0103 har ingen bøker du må kjøpe. Alt er å regne som
+støtteliteratur. Hovedresursen er <a
+href="https://beej.us/guide/bgc/html/split/index.html">Beej’s Guide to C
+Programming volume I</a>.</p>
+<p>Noen andre resurser: * <a
+href="https://beej.us/guide/bgclr/html/split/index.html">Beej’s Guide to
+C volume II</a>: Beksrivelse og eksempelbruk av alle
+biblioteksfunksjoner i C * <a href="https://c-faq.com/">c-faq</a>:
+ofte-stilte spørsmål om C * Kernighan &amp; Ritchie <em>The C
+Programming language</em> er en ganske gammel men ofte god oversikt over
+C. Pleide å være støtteliteratur til INF-1100, som dagens INF-0103
+bygger på. <a
 href="https://archive.org/details/c-programming-language-2nd-edition/mode/2up">Finnes
-tilgjengelig online her</a>.</li>
-<li><a href="https://beej.us/guide/bgc/html/split/index.html">Beej’s
-Guide to C Programming</a></li>
-<li><a href="https://c-faq.com/">c-faq</a>: ofte-stilte spørsmål om
-C</li>
-<li><a href="https://en.cppreference.com/w/c.html">C reference</a>:
-Teknisk dokumentasjon for C.</li>
-</ul>
+tilgjengelig online her</a>.</p>
 <p><a href="#innhold">Tilbake til innhold</a></p>
 <h2 id="stab">Kursets stab</h2>
 <h3 id="forelesere">Forelesere</h3>
 <ul>
-<li>AB: Anne Bosch (foreleser)</li>
-<li>RB: Rune Bostad (ansvarilg på Mo)</li>
-<li>EH: Einar Holsbø (kursansvarlig)</li>
-<li>EP: Edvard Pedersen (foreleser)</li>
-<li>JP: Jakob Pettersen (foreleser)</li>
+<li>Einar Holsbø (emneansvarlig)</li>
+<li>Edvard Pedersen (foreleser)</li>
 </ul>
 <h3 id="hjelpelærere">Hjelpelærere</h3>
-<ul>
-<li>Thomas L. Nygård (Mo)</li>
-<li>Thomas Tekie</li>
-<li>Simon Gilbu</li>
-<li>Håkon Johansen</li>
-<li>Ghafoor Ahsan</li>
-<li>Christoffer V. Larsen</li>
-<li>Tommy Nguyen</li>
-</ul>
 <p><a href="#innhold">Tilbake til innhold</a></p>
-<h2 id="plan">Forelesningsplan</h2>
+<h2 id="plan">Framdriftsplan</h2>
 <p>Merk: på de dager hvor det ikke står noe er det ikke forelesning.
 Dette er uansett om du har noe i timeplanen din som sier at det skal
 være forelesning.</p>
-<p>Enkelte dager har vi forelesning + BBI-foredrag eller bare
-BBI-foredrag. Oversikt over BBI tema finner du <a
-href="https://uit.no/project/bbi2/cultural">her</a>.</p>
 <table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 46%" />
-<col style="width: 29%" />
-<col style="width: 9%" />
+<col style="width: 20%" />
+<col style="width: 48%" />
+<col style="width: 31%" />
 </colgroup>
 <thead>
 <tr>
-<th>Dato</th>
-<th>Tema</th>
+<th>Når</th>
+<th>Hva</th>
 <th>Notater</th>
-<th>Foreleser</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Tirsdag 23/09</strong></td>
-<td>Kompilering og headers</td>
-<td></td>
-<td>JP+EH</td>
+<td><strong>Uke 39, dag 1</strong></td>
+<td>Fri</td>
+<td>Merk: ekstra intro-forelesning på mandagen kl 13:15, se <a
+href="https://tp.educloud.no/uit/app/schedule?semester=26h&amp;scheduleType=course&amp;filterOpen=true&amp;summary=true&amp;pastWeeks=false&amp;tab=calendar&amp;course=INF-0103%C2%A41">timeplan</a></td>
 </tr>
 <tr>
-<td>Fredag 26/09</td>
-<td>BBI-foredrag</td>
-<td></td>
-<td>BBI</td>
-</tr>
-<tr>
-<td><strong>Tirsdag 30/09</strong></td>
-<td>Minne I: Pekere, tabeller, generell oversikt</td>
-<td></td>
-<td>JP</td>
-</tr>
-<tr>
-<td>Fredag 03/10</td>
-<td>2’s complement og flyttallsrepresentasjoner</td>
-<td></td>
-<td>AB</td>
-</tr>
-<tr>
-<td><strong>Tirsdag 07/10</strong></td>
-<td>Sammensatte datatyper (structs) + BBI foredrag</td>
-<td></td>
-<td>BBI+EP</td>
-</tr>
-<tr>
-<td>Fredag 10/10</td>
-<td>Minne II: Dynamisk minnehåndtering</td>
-<td>obligatorisk oppgave deles ut</td>
-<td>EP</td>
-</tr>
-<tr>
-<td><strong>Tirsdag 14/10</strong></td>
-<td>Minne III: Stack, call stack, heap</td>
-<td></td>
-<td>EH</td>
-</tr>
-<tr>
-<td>Fredag 17/10</td>
-<td>Minne: Pekere (repetisjon)</td>
-<td></td>
-<td>SG</td>
-</tr>
-<tr>
-<td><strong>Tirsdag 21/10</strong></td>
-<td>Lenket liste + BBI-foredrag</td>
-<td></td>
-<td>BBI + EH</td>
-</tr>
-<tr>
-<td>Fredag 24/10</td>
-<td>SDL/Event loop</td>
-<td></td>
-<td>EP</td>
-</tr>
-<tr>
-<td><strong>Tirsdag 28/10</strong></td>
-<td>Rekursjon + BBI-foredrag</td>
-<td></td>
-<td>BBI + EH</td>
-</tr>
-<tr>
-<td>Fredag 31/10</td>
-<td></td>
-<td></td>
+<td><strong>Uke 39, dag 2</strong></td>
+<td><a href="projects/00_fill_triangle/p1/">Fill triangle, del
+1.1</a></td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Tirsdag 04/11</strong></td>
-<td>Input/Output med filer</td>
-<td></td>
-<td>EP</td>
-</tr>
-<tr>
-<td>Fredag 07/11</td>
-<td></td>
-<td>obligatorisk oppgave skal leveres</td>
+<td>Uke 40, dag 1</td>
+<td><a href="projects/00_fill_triangle/p2/">Fill triangle, del
+1.2</a></td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Tirsdag 11/11</strong></td>
-<td>Von Neumann-modellen +BBI-foredrag</td>
-<td></td>
-<td>BBI + AB</td>
-</tr>
-<tr>
-<td>Fredag 14/11</td>
-<td></td>
-<td></td>
+<td>Uke 40, dag 2</td>
+<td><a href="projects/00_fill_triangle/p2/">Fill triangle, del
+1.2</a></td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Tirsdag 18/11</strong></td>
-<td>Ringbuffer + Evaluering</td>
-<td></td>
-<td>EP + EH</td>
-</tr>
-<tr>
-<td>Fredag 21/11</td>
-<td></td>
-<td></td>
+<td><strong>Uke 41, dag 1</strong></td>
+<td><a href="projects/00_fill_triangle/p3/">Fill triangle, del
+1.3</a></td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Tirsdag 25/11</strong></td>
-<td>Repetisjon/eksamenstips + BBI-foredrag</td>
+<td><strong>Uke 41, dag 2</strong></td>
+<td><a href="projects/00_fill_triangle/p3/">Fill triangle, del
+1.3</a></td>
 <td></td>
-<td>BBI + EH</td>
 </tr>
 <tr>
-<td>Fredag 28/11</td>
+<td>Uke 42, dag 1</td>
+<td>Simons pekerforelesning</td>
 <td></td>
+</tr>
+<tr>
+<td>Uke 42, dag 2</td>
+<td>Prøveeksamen</td>
 <td></td>
+</tr>
+<tr>
+<td><strong>Uke 43, dag 1</strong></td>
+<td>TBA</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Uke 43, dag 2</strong></td>
+<td>TBA</td>
+<td></td>
+</tr>
+<tr>
+<td>Uke 44, dag 1</td>
+<td>TBA</td>
+<td></td>
+</tr>
+<tr>
+<td>Uke 44, dag 2</td>
+<td>TBA</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Uke 45, dag 1</strong></td>
+<td>TBA</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Uke 45, dag 2</strong></td>
+<td>TBA</td>
+<td></td>
+</tr>
+<tr>
+<td>Uke 46, dag 1</td>
+<td>TBA</td>
+<td></td>
+</tr>
+<tr>
+<td>Uke 46, dag 2</td>
+<td>TBA</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Uke 47, dag 1</strong></td>
+<td>TBA</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Uke 47, dag 2</strong></td>
+<td>TBA</td>
+<td></td>
+</tr>
+<tr>
+<td>Uke 48, dag 1</td>
+<td>TBA</td>
+<td></td>
+</tr>
+<tr>
+<td>Uke 48, dag 2</td>
+<td>TBA</td>
 <td></td>
 </tr>
 <tr>
 <td><tag style="color: red;"> <strong>Torsdag 11/12</strong> </tag></td>
 <td><tag style="color: red;"> <strong>EKSAMEN</strong> </tag></td>
-<td></td>
 <td></td>
 </tr>
 </tbody>

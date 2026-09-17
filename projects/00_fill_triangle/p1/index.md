@@ -1,7 +1,7 @@
 # Project 1.1: triangle data structure
 
 ## Main task
-Get [the precode](pre.zip). In the `main()` function of the program, use
+Get [the precode](../pre.zip). In the `main()` function of the program, use
 `draw_line` to draw the object `exampletriangle1`.
 
 ## Bonus tasks
