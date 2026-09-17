@@ -10,7 +10,7 @@
 typedef struct triangle triangle_t;
 
 struct triangle {
-    /* Model coordinates, where each pair resemble a corner  */
+    /* Model coordinates, where each pair represents a corner  */
     int x1, y1;
     int x2, y2;
     int x3, y3;
@@ -21,7 +21,8 @@ struct triangle {
     /* Scale factor, meaning 0.5 should half the size, 1 keep, and 2.0 double */
     float scale;
 
-    /* The point (tx, ty) where the center of the teapot should be placed on-screen */
+    /* Translation coordinates. Since the teapot has its center at (0,0) it
+     * will be translated to ahve center (tx, ty) on-screen */
     int tx, ty;
     
     /* 
@@ -33,7 +34,7 @@ struct triangle {
      */
     SDL_Rect rect;
 
-    /* On-screen coordinates, where each pair resemble a corner */
+    /* On-screen coordinates, where each pair represents a corner */
     int sx1, sy1;
     int sx2, sy2;
     int sx3, sy3;

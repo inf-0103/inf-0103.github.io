@@ -85,27 +85,44 @@ int main(void)
         goto error;
     }
 
-    /*
-     * The teapot is represented as an array of triangle data structures.
-     * To draw it on the screen you need to traverse the 'teapot_model' array
-     * and call draw_triangle for each triangle (teapot_data.h contains the array).  
-     * The definition TEAPOT_NUMTRIANGLES specifies the number of triangles in the array.
-     * The teapot model is contained within a 1000x1000 box (coordinates
-     * from -500 to 500 on the x and y axis).  Remember to translate the
-     * model to the middle of the screen before drawing it (initialize 
-     * triangle->tx and triangle->ty with the appropriate coordinates).
-     */
     
     /*
-     * Draw some example triangles on the screen. 
-     * Use these examples in the beginning.
+     * ############## Project 1.1 ####################################
+     * draw exampletriangle1 using calls to draw_line
+     * right here in main.
      *
-     * Remove these and draw the triangles that represent he teapot
      */
-    draw_triangle(surface, &exampletriangle1);
-    draw_triangle(surface, &exampletriangle2);
-    draw_triangle(surface, &exampletriangle3);
-    draw_triangle(surface, &exampletriangle4);
+
+    /*
+     * ############## Project 1.2 ####################################
+     * Draw outlines for the below example triangles on the screen. 
+     *
+     */
+
+    /*
+     * ############## Project 1.3 ####################################
+     * Draw filled-in versions of the below triangles. Draw the teapot
+     *
+     *
+     * The teapot is represented as an array of triangle data structures. To
+     * draw it on the screen you need to traverse the 'teapot_model' array and
+     * call draw_triangle for each triangle (teapot_data.h contains the array).
+     * The definition TEAPOT_NUMTRIANGLES specifies the number of triangles in
+     * the array. The teapot model is contained within a 1000x1000 box
+     * (coordinates from -500 to 500 on the x and y axis).  Remember to
+     * translate the model to the middle of the screen before drawing it
+     * (initialize triangle->tx and triangle->ty with the appropriate
+     * coordinates).
+     *
+     */
+
+    // uncomment these to draw the test triangles
+    //draw_triangle(surface, &exampletriangle1);
+    //draw_triangle(surface, &exampletriangle2);
+    //draw_triangle(surface, &exampletriangle3);
+    //draw_triangle(surface, &exampletriangle4);
+
+
 
 	
     /* Wait for the user to exit the application */
