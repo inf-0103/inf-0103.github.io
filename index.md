@@ -1,14 +1,13 @@
-# INF-0103 Datamaskiners virkemåte og programmering, høst 2025.
+# INF-0103 Datamaskiners virkemåte og programmering, høst 2026.
 
-Innleveringer og kunngjøringer skjer i Canvas. Se også Canvas for
-invitasjonslenke til Discord.
+Kunngjøringer skjer i Canvas. Se også Canvas for invitasjonslenke til Discord.
 
 ## Innhold {#innhold}
 Her er nyttige lenker for å hoppe rett til en av overskriftene nedenfor
 
 * [Pensumlitteratur](#pensum)
 * [Kursets stab](#stab)
-* [Forelesningsplan](#plan)
+* [Framdriftsplan](#plan)
 * [Eksamen](#eksamen)
 * [Obligatoriske oppgaver](#oblig)
 * [Hvor finner man programmerings oppgaver?](#oppgaver)
@@ -18,71 +17,58 @@ Her er nyttige lenker for å hoppe rett til en av overskriftene nedenfor
 
 ## Pensumlitteratur  {#pensum}
 
-### Pensum
-* Patt & Patel -- Introduction to Computing Systems (kalles P&P i
-  temaoversikt). Fås i universitetsbokhandelen. Det finner løsningsforslag til
-  utvalgte oppgaver 
-  [på denne siden](https://highered.mheducation.com/sites/1260150534/student_view0/student_solutions_manual.html). 
-  Merk at LC3 ikke er en del av pensum i dette kurset.
+INF-0103 har ingen bøker du må kjøpe. Alt er å regne som støtteliteratur.
+Hovedresursen er 
+[Beej's Guide to C Programming volume I](https://beej.us/guide/bgc/html/split/index.html).
 
-### Støttelitteratur
-* Kernighan & Ritchie -- The C Programming language (K&R i temaoversikt).
-  [Finnes tilgjengelig online her](https://archive.org/details/c-programming-language-2nd-edition/mode/2up).
-* [Beej's Guide to C Programming](https://beej.us/guide/bgc/html/split/index.html)
+Noen andre resurser:
+* [Beej's Guide to C volume II](https://beej.us/guide/bgclr/html/split/index.html):
+  Beksrivelse og eksempelbruk av alle biblioteksfunksjoner i C
 * [c-faq](https://c-faq.com/): ofte-stilte spørsmål om C
-* [C reference](https://en.cppreference.com/w/c.html): Teknisk dokumentasjon for C.
+* Kernighan & Ritchie _The C Programming language_ er en ganske gammel men ofte
+  god oversikt over C. Pleide å være støtteliteratur til INF-1100, som dagens
+  INF-0103 bygger på.
+  [Finnes tilgjengelig online her](https://archive.org/details/c-programming-language-2nd-edition/mode/2up).
 
 [Tilbake til innhold](#innhold)
 
 ## Kursets stab {#stab}
 ### Forelesere
-* AB: Anne Bosch (foreleser)
-* RB: Rune Bostad (ansvarilg på Mo)
-* EH: Einar Holsbø (kursansvarlig)
-* EP: Edvard Pedersen (foreleser)
-* JP: Jakob Pettersen (foreleser)
+* Einar Holsbø (emneansvarlig)
+* Edvard Pedersen (foreleser)
 
 ### Hjelpelærere
-* Thomas L. Nygård (Mo)
-* Thomas Tekie
-* Simon Gilbu
-* Håkon Johansen
-* Ghafoor Ahsan
-* Christoffer V. Larsen
-* Tommy Nguyen
 
 [Tilbake til innhold](#innhold)
 
-## Forelesningsplan {#plan} 
+## Framdriftsplan {#plan} 
 Merk: på de dager hvor det ikke står noe er det ikke forelesning. Dette er
 uansett om du har noe i timeplanen din som sier at det skal være forelesning.
 
-Enkelte dager har vi forelesning + BBI-foredrag eller bare BBI-foredrag.
-Oversikt over BBI tema finner du [her](https://uit.no/project/bbi2/cultural).
 
-| Dato            | Tema                                                 | Notater                           | Foreleser |
-|-----------------|------------------------------------------------------|-----------------------------------|-----------|
-|**Tirsdag 23/09**|   Kompilering og headers                             |                                   |   JP+EH   |
-| Fredag 26/09    |   BBI-foredrag                                       |                                   |   BBI     |
-|**Tirsdag 30/09**|   Minne I: Pekere, tabeller, generell oversikt       |                                   |   JP      |
-| Fredag 03/10    |   2's complement og flyttallsrepresentasjoner        |                                   |   AB      |
-|**Tirsdag 07/10**|   Sammensatte datatyper (structs) + BBI foredrag     |                                   |  BBI+EP   |
-| Fredag 10/10    |   Minne II: Dynamisk minnehåndtering                 | obligatorisk oppgave deles ut     |   EP      |
-|**Tirsdag 14/10**|   Minne III: Stack, call stack, heap                 |                                   |   EH      |
-| Fredag 17/10    |   Minne: Pekere (repetisjon)                         |                                   |   SG      |
-|**Tirsdag 21/10**|   Lenket liste + BBI-foredrag                        |                                   | BBI + EH  | 
-| Fredag 24/10    |   SDL/Event loop                                     |                                   |   EP      |
-|**Tirsdag 28/10**|   Rekursjon + BBI-foredrag                           |                                   | BBI + EH  |
-| Fredag 31/10    |                                                      |                                   |           |
-|**Tirsdag 04/11**|   Input/Output med filer                             |                                   |   EP      |
-| Fredag 07/11    |                                                      | obligatorisk oppgave skal leveres |           |
-|**Tirsdag 11/11**|   Von Neumann-modellen +BBI-foredrag                 |                                   | BBI + AB  |
-| Fredag 14/11    |                                                      |                                   |           |
-|**Tirsdag 18/11**|   Ringbuffer + Evaluering                            |                                   | EP + EH   |
-| Fredag 21/11    |                                                      |                                   |           |
-|**Tirsdag 25/11**|   Repetisjon/eksamenstips  +  BBI-foredrag           |                                   | BBI + EH  |
-| Fredag 28/11    |                                                      |                                   |           |
-| <tag style="color: red;"> **Torsdag 11/12** </tag>   | <tag style="color: red;">  **EKSAMEN** </tag>  |    |           |
+| Når                  | Hva                                                 | Notater                           |
+|----------------------|-----------------------------------------------------|-----------------------------------|
+| **Uke 39, dag 1**    |   Fri                                               |  Merk: ekstra intro-forelesning på mandagen kl 13:15, se [timeplan](https://tp.educloud.no/uit/app/schedule?semester=26h&scheduleType=course&filterOpen=true&summary=true&pastWeeks=false&tab=calendar&course=INF-0103%C2%A41)
+| **Uke 39, dag 2**    |   [Fill triangle, del 1.1](projects/00_fill_triangle/p1/)    |                                   |
+| Uke 40, dag 1        |   [Fill triangle, del 1.2](projects/00_fill_triangle/p2/)    |                                   |
+| Uke 40, dag 2        |   [Fill triangle, del 1.2](projects/00_fill_triangle/p2/)    |                                   |
+| **Uke 41, dag 1**    |   [Fill triangle, del 1.3](projects/00_fill_triangle/p3/)    |                                   |
+| **Uke 41, dag 2**    |   [Fill triangle, del 1.3](projects/00_fill_triangle/p3/)    |                                   |
+| Uke 42, dag 1        |   Simons pekerforelesning                           |                                   |
+| Uke 42, dag 2        |   Prøveeksamen                                      |                                   |
+| **Uke 43, dag 1**    |   TBA                                               |                                   | 
+| **Uke 43, dag 2**    |     TBA                                             |                                   |
+| Uke 44, dag 1        |       TBA                                           |                                   |
+| Uke 44, dag 2        |         TBA                                         |                                   |
+| **Uke 45, dag 1**    |           TBA                                       |                                   |
+| **Uke 45, dag 2**    |             TBA                                     |                                   |
+| Uke 46, dag 1        |               TBA                                   |                                   |
+| Uke 46, dag 2        |                 TBA                                 |                                   |
+| **Uke 47, dag 1**    |                   TBA                               |                                   |
+| **Uke 47, dag 2**    |                     TBA                             |                                   |
+| Uke 48, dag 1        |                       TBA                           |                                   |
+| Uke 48, dag 2        |                         TBA                         |                                   |
+| <tag style="color: red;"> **Torsdag 11/12** </tag>   | <tag style="color: red;">  **EKSAMEN** </tag>  |    |
 
 [Tilbake til innhold](#innhold)
 
