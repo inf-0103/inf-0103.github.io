@@ -12,6 +12,7 @@ Her er nyttige lenker for å hoppe rett til en av overskriftene nedenfor
 * [Obligatoriske oppgaver](#oblig)
 * [Hvor finner man programmerings oppgaver?](#oppgaver)
 * [Temaoversikt](#temaoversikt)
+* [Tidligere år](#tidligere)
 
 
 ## Pensumlitteratur  {#pensum}
@@ -112,6 +113,11 @@ resurser online. For eksempel:
 
 I tillegg finnes det mange alternativer på YouTube, som f.eks. fra
 [freeCodeCamp](https://www.youtube.com/watch?v=KJgsSFOSQv0).
+
+[Tilbake til innhold](#innhold)
+
+## Tidligere år {#tidligere}
+Hvis du ser etter websida fra 2025 [er den her](archive/2025/).
 
 [Tilbake til innhold](#innhold)
 
