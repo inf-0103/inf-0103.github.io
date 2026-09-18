@@ -8,9 +8,10 @@ Her er nyttige lenker for å hoppe rett til en av overskriftene nedenfor
 * [Pensumlitteratur](#pensum)
 * [Kursets stab](#stab)
 * [Framdriftsplan](#plan)
+* [PBL skjema](#pbl)
 * [Eksamen](#eksamen)
 * [Obligatoriske oppgaver](#oblig)
-* [Hvor finner man programmerings oppgaver?](#oppgaver)
+* [Hvor finner man programmeringsoppgaver?](#oppgaver)
 * [Temaoversikt](#temaoversikt)
 * [Tidligere år](#tidligere)
 
@@ -22,6 +23,7 @@ Hovedresursen er
 [Beej's Guide to C Programming volume I](https://beej.us/guide/bgc/html/split/index.html).
 
 Noen andre resurser:
+
 * [Beej's Guide to C volume II](https://beej.us/guide/bgclr/html/split/index.html):
   Beksrivelse og eksempelbruk av alle biblioteksfunksjoner i C
 * [c-faq](https://c-faq.com/): ofte-stilte spørsmål om C
@@ -53,7 +55,7 @@ uansett om du har noe i timeplanen din som sier at det skal være forelesning.
 
 | Når                  | Hva                                                 | Notater                           |
 |----------------------|-----------------------------------------------------|-----------------------------------|
-| **Uke 39, dag 1**    |   Fri                                               |  Merk: ekstra intro-forelesning på mandagen kl 13:15, se [timeplan](https://tp.educloud.no/uit/app/schedule?semester=26h&scheduleType=course&filterOpen=true&summary=true&pastWeeks=false&tab=calendar&course=INF-0103%C2%A41)
+| **Uke 39, dag 1**    |   Fri                                               |  Merk: ekstra [intro-forelesning](docs/intro/slides.pdf) på mandagen kl 13:15, se [timeplan](https://tp.educloud.no/uit/app/schedule?semester=26h&scheduleType=course&filterOpen=true&summary=true&pastWeeks=false&tab=calendar&course=INF-0103%C2%A41)
 | **Uke 39, dag 2**    |   [Fill triangle, del 1.1](projects/00_fill_triangle/p1/)    |                                   |
 | Uke 40, dag 1        |   [Fill triangle, del 1.2](projects/00_fill_triangle/p2/)    |                                   |
 | Uke 40, dag 2        |   [Fill triangle, del 1.2](projects/00_fill_triangle/p2/)    |                                   |
@@ -74,6 +76,13 @@ uansett om du har noe i timeplanen din som sier at det skal være forelesning.
 | Uke 48, dag 1        |                       TBA                           |                                   |
 | Uke 48, dag 2        |                         TBA                         |                                   |
 | <tag style="color: red;"> **Tirsdag 1/12** </tag>   | <tag style="color: red;">  **EKSAMEN** </tag>  |    |
+
+[Tilbake til innhold](#innhold)
+
+## PBL skjema {#pbl}
+ 
+* [Skjema for studenter](docs/arbeidsmetode_pbl.pdf)
+* [Skjema for lærere](docs/veilederinstruks_pbl.pdf)
 
 [Tilbake til innhold](#innhold)
 
