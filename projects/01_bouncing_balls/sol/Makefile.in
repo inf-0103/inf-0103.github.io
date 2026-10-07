@@ -1,32 +1,5 @@
 # Platform detection
 PLATFORM = $(shell uname -a)
-ifeq ($(findstring Microsoft, $(PLATFORM)),Microsoft)
-    $(info === Linux Subsystem for Windows)
-    CC = x86_64-w64-mingw32-gcc
-    PRE_BUILD = cp SDL2-64.dll SDL2.dll
-    EXECUTABLE := $(EXECUTABLE).exe
-    
-    TEST_APP := $(TEST_APP).exe
-    TEST_SOURCE += lib/tests_lsw.o
-
-    PRE_REQ := $(shell command -v $(CC) 2> /dev/null)
-    ifndef PRE_REQ
-        $(error Compiler not installed; install with 'sudo apt-get -y install mingw-w64 mingw-w64-tools')
-    endif
-else
-ifeq ($(findstring Cygwin, $(PLATFORM)),Cygwin)
-    EXECUTABLE := $(EXECUTABLE).exe
-    TEST_APP := $(TEST_APP).exe
-    ifeq ($(findstring x86_64, $(PLATFORM)),x86_64)
-        $(info === 64bit Cygwin)
-        TEST_SOURCE += lib/tests_cyg64.o
-        PRE_BUILD = cp SDL2-64.dll SDL2.dll
-    else
-        $(info === 32bit Cygwin)
-        TEST_SOURCE += lib/tests_cyg32.o
-        PRE_BUILD = cp SDL2-32.dll SDL2.dll
-    endif
-else
 ifeq ($(findstring Darwin, $(PLATFORM)),Darwin)
     ifeq ($(findstring arm64, $(PLATFORM)), arm64)
         $(info === MacOS arm64)

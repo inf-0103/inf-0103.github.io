@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <memory.h>
-#include <SDL.h>
+#include <SDL3/SDL.h>
 #include "drawline.h"
 #include "triangle.h"
 #include "object.h"

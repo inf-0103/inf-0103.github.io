@@ -2,7 +2,7 @@
 #define OBJECT_H_
 
 #include "triangle.h"
-#include <SDL.h>
+#include <SDL3/SDL.h>
 
 typedef struct object object_t;
 

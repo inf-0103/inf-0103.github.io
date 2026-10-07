@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include <SDL.h>
+#include <SDL3/SDL.h>
 #include "drawline.h"
 #include "triangle.h"
 #include "list.h"
@@ -17,12 +17,11 @@
 #define max(x,y) (x > y ? x : y)
 
 
-/*
- * Clear the surface by filling it with 0x00000000(black).
- */
+    /* Clear the surface by filling it with 0x00000000(black).
+     */
 void clear_screen(SDL_Surface *surface)
 {
-    if(SDL_FillRect(surface, NULL, 0x00000000) < 0){
+    if(!SDL_FillSurfaceRect(surface, NULL, 0x00000000)){
         fprintf(stderr, "Unable to clear the surface. Error returned: %s\n", SDL_GetError());
         SDL_Quit();
         exit(EXIT_FAILURE);
@@ -215,12 +214,11 @@ void bouncing_balls(SDL_Window *window)
         /* Detect that the user tries to quit the application */
         while(SDL_PollEvent(&event)) {
             switch(event.type) {
-                case SDL_QUIT:
+                case SDL_EVENT_QUIT:
                     done = 1;
                     break;
-                case SDL_WINDOWEVENT:
-                    if (event.window.event == SDL_WINDOWEVENT_SHOWN)
-                        SDL_SetWindowPosition(window, 50, 50);
+                case SDL_EVENT_WINDOW_SHOWN:
+                    SDL_SetWindowPosition(window, 50, 50);
                     break;
             }
         }
@@ -257,21 +255,20 @@ int main(void)
     SDL_Window *window;
     
     /* Initialize SDL */
-    if (SDL_Init(SDL_INIT_VIDEO) < -1) {
+    if (!SDL_Init(SDL_INIT_VIDEO)) {
         snprintf(errmsg, bufsize, "Unable to initialize SDL.");
         goto error;
     }
     
     /* Create a 1600x900 window */
     window = SDL_CreateWindow("The Amazing Bouncing Balls",
-                              SDL_WINDOWPOS_UNDEFINED,
-                              SDL_WINDOWPOS_UNDEFINED,
-                              screen_w, screen_h,
-                              0);
+                               screen_w, screen_h,
+                               0);
     if(!window) {
         snprintf(errmsg, bufsize, "Unable to get video surface.");
         goto error;
     }
+
 
     /* Start bouncing some balls */
     bouncing_balls(window);
