@@ -91,7 +91,7 @@ Eksamen er en 3 timers skriftlig skoleeksamen. I praksis betyr dette at du
 møter opp på et eksamenslokale og løser eksamen der. For å øve til eksamen kan
 det være en god idé å gå gjennom gamle eksamensett. Du kan finne noen i
 [kursets repo](https://github.com/inf-0103/inf-0103.github.io) under
-`exams_1100/`. Disse er teknisk sett fra det eldre kurset INF-1100, men pensum
+`exams/`. De fleste oppgavene er fra det eldre kurset INF-1100, men pensum
 er stort sett likt. Fokuser på oppgaver hvor du må implementere noe.
 
 [Tilbake til innhold](#innhold)
