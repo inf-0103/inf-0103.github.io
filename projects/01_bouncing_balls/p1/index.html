@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>INF-0103</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">INF-0103</h1>
+</header>
+<h1 id="project-2.1-linked-list">Project 2.1: linked list</h1>
+<h2 id="main-task">Main task</h2>
+<p>We are building toward making an animation, but we first need a
+dynamic data structure called a <em>linked list</em>.</p>
+<p>Get <a href="pre_ll.zip">the precode</a>. In <code>list.c</code> you
+will find empty functions that implement linked list functionality. Your
+task is to implement these.</p>
+<p>For your convenience we have provided a program to test the list
+implementation. You can build it by doing <code>make test</code> and run
+it by <code>./testlist</code>. If all checks are OK here it’s likely
+that the list works as expected but note that you might get an OK on
+empty functions.</p>
+<h2 id="bonus-tasks">Bonus tasks</h2>
+<p>If you finish early, try these extensions:</p>
+<ol type="1">
+<li>The important part of a linked list is its interface; the user
+(probably) doesn’t care how the list is implemented underneath. Change
+the implementation to use an array as the underlying structure instead
+of dynamically allocated list nodes.</li>
+<li>The list is general enough that you can put anything in it (it takes
+a void pointer). Use <code>rand()</code> to fill a list with random
+numbers and then implement a sorting algorithm to sort the list.</li>
+</ol>
+<h2 id="resourceshints">Resources/hints</h2>
+<p>Look at <code>struct listnode</code> and <code>struct list</code> to
+get an idea of how the list should be built. The linked list is a
+fundamental data structure and there are many resources online to learn
+about it. The <a
+href="https://en.wikipedia.org/wiki/Linked_list">wikipedia article</a>
+is a good starting point. Don’t look at the C code example! (Or only
+look at it after you tried doing it yourself).</p>
+<p>The big new idea in this assignment is <a
+href="https://beej.us/guide/bgc/html/split/manual-memory-allocation.html#manual-memory-allocation">memory
+allocation</a> (see espeicially <code>malloc</code>/<code>free</code> on
+that page).</p>
+<p>There is also plenty of use of pointers, which technically we
+introduced in the fill triangle assignment but we didn’t have think too
+much about them. We do now so <a
+href="https://beej.us/guide/bgc/html/split/pointers.html#pointers">read
+up on pointers</a>. Notice that the list node holds a <a
+href="https://beej.us/guide/bgc/html/split/pointers2.html#void-pointers"><code>void</code>
+pointer</a>. Another useful idea is the <a
+href="https://beej.us/guide/bgc/html/split/pointers.html#the-null-pointer"><code>NULL</code>
+pointer</a>.</p>
+<p>If you get comfortable with the ideas in this assignment you have
+mosly figured out C, the rest is details.</p>
+<h3 id="testing">Testing</h3>
+<p>A useful idea that we gave you for free this time but that is worth
+remembering is the idea that you can write a program that tests your
+implementation. The basic approach is very simple:</p>
+<ol start="0" type="1">
+<li>I want to see that my function <code>f</code> does as it should</li>
+<li>and for this input <code>X</code> I know that the output should be
+<code>Y</code></li>
+<li>so I do <code>f(X)</code></li>
+<li>and check if the result is <code>Y</code>.</li>
+</ol>
+<p>You have probably used this approach informally already. The
+<code>testlist</code> program just automates it.</p>
+</body>
+</html>

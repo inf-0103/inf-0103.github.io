@@ -63,8 +63,8 @@ uansett om du har noe i timeplanen din som sier at det skal være forelesning.
 | **Uke 41, dag 2**    |   [Fill triangle, del 1.3](projects/00_fill_triangle/p3/)    |                                   |
 | Uke 42, dag 1        |   Simons pekerforelesning                           |                                   |
 | Uke 42, dag 2        |   Prøveeksamen                                      |  [oppgave](docs/trial_exam/exam.pdf) + [løsningsforslag](docs/trial_exam/exam_sol.pdf)  | 
-| **Uke 43, dag 1**    |   TBA                                               |                                   | 
-| **Uke 43, dag 2**    |     TBA                                             |                                   |
+| **Uke 43, dag 1**    |   [Bouncing balls, del 2.1](projects/01_bouncing_balls/p1/)  |                                   | 
+| **Uke 43, dag 2**    |   [Bouncing balls, del 2.1](projects/01_bouncing_balls/p1/)  |                                   | 
 | Uke 44, dag 1        |       TBA                                           |                                   |
 | Uke 44, dag 2        |         TBA                                         |                                   |
 | **Uke 45, dag 1**    |           TBA                                       |                                   |
