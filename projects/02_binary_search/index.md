@@ -29,7 +29,9 @@ from any VSCode automatic build thing.
 ## Bonus tasks
 If you finish early, try these extensions:
 
-1. Do the binary search as a loop instead of recursively.
+1. A) Do the binary search as a loop instead of recursively. 
+   B) Measure which of the two approaches is faster (by generating lots of
+   random searches). Can you explain the results?
 2. (Challenging) Assume you have a big array that isn't sorted. You can
    generate one by using `rand()`. The idea that "a binary search is a binary
    search in the right half of the array" can be used in sorting: a quicksort
