@@ -67,10 +67,10 @@ uansett om du har noe i timeplanen din som sier at det skal være forelesning.
 | **Uke 43, dag 2**    |   [Bouncing balls, del 2.1](projects/01_bouncing_balls/p1/)  |                                   | 
 | Uke 44, dag 1        | [Bouncing balls, del 2.2](projects/01_bouncing_balls/p2/) |                                   |
 | Uke 44, dag 2        | [Bouncing balls, del 2.2](projects/01_bouncing_balls/p2/) |                                   |
-| **Uke 45, dag 1**    | [Rekursjon/binærsøk](projects/02_binary_search/p1/) |                                   |
-| **Uke 45, dag 2**    | [Rekursjon/binærsøk](projects/02_binary_search/p1/) |                                   |
-| Uke 46, dag 1        |               TBA                                   |                                   |
-| Uke 46, dag 2        |                 TBA                                 |                                   |
+| **Uke 45, dag 1**    | [Rekursjon/binærsøk](projects/02_binary_search/) |                                   |
+| **Uke 45, dag 2**    | [Rekursjon/binærsøk](projects/02_binary_search/) |                                   |
+| Uke 46, dag 1        | [Moby-Dick](projects/03_moby_dick/)                 |                                   |
+| Uke 46, dag 2        | [Moby-Dick](projects/03_moby_dick/)                 |                                   |
 | **Uke 47, dag 1**    |                   TBA                               |                                   |
 | **Uke 47, dag 2**    |                     TBA                             |                                   |
 | Uke 48, dag 1        |                       TBA                           |                                   |
