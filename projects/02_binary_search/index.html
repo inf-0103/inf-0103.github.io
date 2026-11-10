@@ -247,7 +247,7 @@ first need some data.</p>
 is a program that finds all the primes less than some number and writes
 those primes to a file. Compile and run this program like</p>
 <div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> generate_primes.c <span class="at">-o</span> generate_primes</span>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> generate_primes.c <span class="at">-o</span> generate_primes <span class="at">-lm</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./generate_primes</span> 500000000</span></code></pre></div>
 <p>This takes a couple of minutes and generates a 100MB file
 <code>primes.bin</code> holding an array of 26355867 prime numbers. The

@@ -9,7 +9,7 @@ Download [the precode](pre.zip) (don't look at `solution.c`!!!!!!). The file
 number and writes those primes to a file. Compile and run this program like
 
 ```bash
-gcc generate_primes.c -o generate_primes
+gcc generate_primes.c -o generate_primes -lm
 ./generate_primes 500000000
 ```
 
