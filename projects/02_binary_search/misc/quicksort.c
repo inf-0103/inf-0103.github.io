@@ -24,8 +24,8 @@ void quicksort(int *first, int *last) {
   if (first >= last) return;
 
   /*
-     the starts as last item in the array. the idea is to move items that are
-     larger than the pivot to the right of the pivot. to do so we must make
+     the pivot starts as last item in the array. the idea is to move items that
+     are larger than the pivot to the right of the pivot. to do so we must make
      room
 
      c is current pointer, p is pivot pointer. 8 > 7 so we must move current
