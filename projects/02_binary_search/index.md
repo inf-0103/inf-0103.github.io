@@ -36,6 +36,7 @@ If you finish early, try these extensions:
    generate one by using `rand()`. The idea that "a binary search is a binary
    search in the right half of the array" can be used in sorting: a quicksort
    is a quicksort on two partitions of the array. Implement quicksort. 
+   [Here is one possible solution.](misc/quicksort.c)
 
 ## Resources/hints
 Note: most likely neither of the below descriptions are enough for you to
